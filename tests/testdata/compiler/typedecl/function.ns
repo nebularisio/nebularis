@@ -1,0 +1,11 @@
+
+type action fn();
+
+type foo fn(int32, string, bool) string;
+
+type zoo fn(a string) string where a <= 23;
+
+[z{}]
+type goo fn() string;
+
+type gen<T, Q> fn(t T) Q;

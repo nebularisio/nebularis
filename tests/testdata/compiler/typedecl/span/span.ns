@@ -1,0 +1,4 @@
+
+type foo []int32;
+
+type foo<T> []T;

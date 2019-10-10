@@ -1,0 +1,88 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 22,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    UnaryStatement {
+                        Expression: IdentifierExpression {
+                            Identifier: a,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 4,
+                                    Line: 3
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        },
+                        Op: ++
+                    },
+                    ReturnStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 4
+                            }
+                        },
+                        Value: IdentifierExpression {
+                            Identifier: a,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 11,
+                                    Line: 4
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 7,
+                                Line: 2
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 9,
+                                    Line: 2
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 16,
+                            Line: 2
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: foo
+        }
+    }
+}

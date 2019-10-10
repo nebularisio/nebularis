@@ -1,0 +1,12 @@
+
+fn foo() {
+    var v = bar();
+}
+
+fn foo2() {
+    var v = bar("a");
+}
+
+fn foo3() {
+    var v = bar("a", 23);
+}

@@ -1,0 +1,18 @@
+
+type Empty struct {};
+
+type Single struct {
+    f1 int32
+};
+
+type Multiple struct {
+    f1 string
+
+    f2 bool
+};
+
+type WithStructField struct {
+    f1 Single
+
+    f2 Multiple
+};

@@ -1,0 +1,122 @@
+Semantics {
+    Modules: {
+        $default: Module {
+            Functions: {
+            },
+            Name: $default,
+            References: {
+            },
+            Types: {
+                Empty: StructType {
+                    Fields: {
+                    }
+                },
+                Multiple: StructType {
+                    Fields: {
+                        f1: Field {
+                            Name: f1,
+                            Type: PrimitiveType {
+                                PrimitiveKind: string
+                            }
+                        },
+                        f2: Field {
+                            Name: f2,
+                            Type: PrimitiveType {
+                                PrimitiveKind: bool
+                            }
+                        }
+                    }
+                },
+                Single: StructType {
+                    Fields: {
+                        f1: Field {
+                            Name: f1,
+                            Type: PrimitiveType {
+                                PrimitiveKind: int32
+                            }
+                        }
+                    }
+                },
+                WithStructField: StructType {
+                    Fields: {
+                        f1: Field {
+                            Name: f1,
+                            Type: ReferencedType {
+                                Name: Single
+                            }
+                        },
+                        f2: Field {
+                            Name: f2,
+                            Type: ReferencedType {
+                                Name: Multiple
+                            }
+                        }
+                    }
+                },
+                zoo: PrimitiveType {
+                    PrimitiveKind: int32,
+                    TypeBase: TypeBase {
+                        Attr: []{
+                            Attribute {
+                                Value: StructExpression {
+                                    Type: ReferencedType {
+                                        Name: Empty
+                                    }
+                                }
+                            },
+                            Attribute {
+                                Value: StructExpression {
+                                    Type: ReferencedType {
+                                        Name: Single
+                                    }
+                                }
+                            },
+                            Attribute {
+                                Value: StructExpression {
+                                    Assignments: []{
+                                        FieldAssignment {
+                                            Name: f1,
+                                            Value: LiteralExpression {
+                                                Literal: IntLiteral {
+                                                    Value: 23
+                                                }
+                                            }
+                                        }
+                                    },
+                                    Type: ReferencedType {
+                                        Name: Single
+                                    }
+                                }
+                            },
+                            Attribute {
+                                Value: StructExpression {
+                                    Assignments: []{
+                                        FieldAssignment {
+                                            Name: f1,
+                                            Value: LiteralExpression {
+                                                Literal: StringLiteral {
+                                                    Value: "foo"
+                                                }
+                                            }
+                                        },
+                                        FieldAssignment {
+                                            Name: f2,
+                                            Value: LiteralExpression {
+                                                Literal: BoolLiteral {
+                                                    Value: true
+                                                }
+                                            }
+                                        }
+                                    },
+                                    Type: ReferencedType {
+                                        Name: Multiple
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

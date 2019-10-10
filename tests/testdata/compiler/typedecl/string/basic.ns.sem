@@ -1,0 +1,16 @@
+Semantics {
+    Modules: {
+        $default: Module {
+            Functions: {
+            },
+            Name: $default,
+            References: {
+            },
+            Types: {
+                tString: PrimitiveType {
+                    PrimitiveKind: string
+                }
+            }
+        }
+    }
+}

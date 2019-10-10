@@ -1,0 +1,12 @@
+CompilationUnit {
+    Imports: []{
+        ImportStatement {
+            ModuleReference: boo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 1
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+CompilationUnit {
+    Declarations: []{
+        TypeDeclaration {
+            Name: foo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 2
+                }
+            },
+            Spec: SpanTypeSpec {
+                Element: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 11,
+                            Line: 2
+                        }
+                    },
+                    Primitive: int32
+                },
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                }
+            }
+        },
+        TypeDeclaration {
+            Name: foo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 4
+                }
+            },
+            Spec: SpanTypeSpec {
+                Element: TypeReference {
+                    Name: T,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 14,
+                            Line: 4
+                        }
+                    }
+                },
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 12,
+                        Line: 4
+                    }
+                }
+            },
+            TypeParameters: []{
+                TypeParameter {
+                    Name: T,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 9,
+                            Line: 4
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

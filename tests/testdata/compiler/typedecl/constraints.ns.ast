@@ -1,0 +1,289 @@
+CompilationUnit {
+    Declarations: []{
+        TypeDeclaration {
+            Constraints: []{
+                WhereClause {
+                    Expression: BinaryExpression {
+                        Left: ValueExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 21,
+                                    Line: 2
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 21,
+                                Line: 2
+                            }
+                        },
+                        Op: >,
+                        Right: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 29,
+                                    Line: 2
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 2
+                            }
+                        }
+                    },
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 15,
+                            Line: 2
+                        }
+                    }
+                }
+            },
+            Name: foo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 2
+                }
+            },
+            Spec: PrimitiveType {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Primitive: int32
+            }
+        },
+        TypeDeclaration {
+            Name: bar,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 4
+                }
+            },
+            Spec: StructType {
+                Fields: []{
+                    Field {
+                        Constraints: []{
+                            WhereClause {
+                                Expression: BinaryExpression {
+                                    Left: ValueExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 20,
+                                                Line: 5
+                                            }
+                                        }
+                                    },
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 20,
+                                            Line: 5
+                                        }
+                                    },
+                                    Op: !=,
+                                    Right: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 29,
+                                                Line: 5
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 3
+                                        }
+                                    }
+                                },
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 14,
+                                        Line: 5
+                                    }
+                                }
+                            }
+                        },
+                        Name: zar,
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 8,
+                                    Line: 5
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                },
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 4
+                    }
+                }
+            }
+        },
+        TypeDeclaration {
+            Name: zoo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 8
+                }
+            },
+            Spec: InterfaceType {
+                Methods: []{
+                    Method {
+                        Constraints: []{
+                            WhereClause {
+                                Expression: BinaryExpression {
+                                    Left: IdentifierExpression {
+                                        Identifier: a,
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 33,
+                                                Line: 9
+                                            }
+                                        }
+                                    },
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 33,
+                                            Line: 9
+                                        }
+                                    },
+                                    Op: >,
+                                    Right: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 37,
+                                                Line: 9
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 8
+                                        }
+                                    }
+                                },
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 27,
+                                        Line: 9
+                                    }
+                                }
+                            },
+                            WhereClause {
+                                Expression: BinaryExpression {
+                                    Left: InvocationExpression {
+                                        Arguments: []{
+                                            IdentifierExpression {
+                                                Identifier: b,
+                                                NodeBase: NodeBase {
+                                                    Location: Location {
+                                                        Column: 49,
+                                                        Line: 9
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 45,
+                                                Line: 9
+                                            }
+                                        },
+                                        Target: IdentifierExpression {
+                                            Identifier: len,
+                                            NodeBase: NodeBase {
+                                                Location: Location {
+                                                    Column: 45,
+                                                    Line: 9
+                                                }
+                                            }
+                                        }
+                                    },
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 45,
+                                            Line: 9
+                                        }
+                                    },
+                                    Op: >,
+                                    Right: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 54,
+                                                Line: 9
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 3
+                                        }
+                                    }
+                                },
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 39,
+                                        Line: 9
+                                    }
+                                }
+                            }
+                        },
+                        FunctionTypeSpec: FunctionTypeSpec {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 4,
+                                    Line: 9
+                                }
+                            },
+                            Parameters: []{
+                                FunctionParameter {
+                                    Name: a,
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 8,
+                                            Line: 9
+                                        }
+                                    },
+                                    Type: PrimitiveType {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 10,
+                                                Line: 9
+                                            }
+                                        },
+                                        Primitive: int32
+                                    }
+                                },
+                                FunctionParameter {
+                                    Name: b,
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 17,
+                                            Line: 9
+                                        }
+                                    },
+                                    Type: PrimitiveType {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 19,
+                                                Line: 9
+                                            }
+                                        },
+                                        Primitive: string
+                                    }
+                                }
+                            }
+                        },
+                        Name: goo
+                    }
+                },
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 8
+                    }
+                }
+            }
+        }
+    }
+}

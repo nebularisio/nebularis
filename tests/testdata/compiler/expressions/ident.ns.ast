@@ -1,0 +1,42 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: IdentifierExpression {
+                            Identifier: b,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 3
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        }
+    }
+}

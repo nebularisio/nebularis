@@ -1,0 +1,28 @@
+
+fn foo() {
+    var v = fn() {};
+}
+
+fn foo2() {
+    var v2 = fn(a int32) int32 {
+        return a + 2;
+    };
+}
+
+fn foo3() {
+    var v2 = fn(a int32, b string) int32 {
+        return a + 2;
+    };
+}
+
+fn foo4() {
+    var v2 = fn(a int32, b string) int32 where a < 2 {
+        return a + 2;
+    };
+}
+
+fn foo5() {
+    var v3 = fn<T, Q>(a T, b Q) Q {
+        return a;
+    };
+}

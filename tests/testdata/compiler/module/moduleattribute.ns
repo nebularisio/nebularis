@@ -1,0 +1,3 @@
+[doo{b: 23}]
+[zoo{b: 23, q: 46}]
+module foo;

@@ -1,0 +1,6 @@
+
+fn zoo() {
+    var foo : int32;
+    var zoo = 23;
+    var goo : string = "aaa";
+}

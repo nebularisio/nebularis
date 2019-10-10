@@ -1,0 +1,13 @@
+Semantics {
+	Modules: {
+		foo: Module {
+			Functions: {
+			},
+			Name: foo,
+			References: {
+			},
+			Types: {
+			}
+		}
+	}
+}

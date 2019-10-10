@@ -1,0 +1,91 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Name: foo,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 3
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    },
+                    VariableStatement {
+                        Initializer: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 4
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 23
+                            }
+                        },
+                        Name: zoo,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 4
+                            }
+                        }
+                    },
+                    VariableStatement {
+                        Initializer: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 23,
+                                    Line: 5
+                                }
+                            },
+                            Value: StringLiteral {
+                                Value: "aaa"
+                            }
+                        },
+                        Name: goo,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 5
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 5
+                                }
+                            },
+                            Primitive: string
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: zoo
+        }
+    }
+}

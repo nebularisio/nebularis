@@ -1,0 +1,98 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 16,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    ExpressionStatement {
+                        Expression: InvocationExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 4,
+                                    Line: 3
+                                }
+                            },
+                            Target: IdentifierExpression {
+                                Identifier: bar,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 4,
+                                        Line: 3
+                                    }
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 7,
+                                Line: 2
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 9,
+                                    Line: 2
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                }
+            },
+            Name: foo
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 14,
+                        Line: 6
+                    }
+                },
+                Statements: []{
+                    NotYetImplementedStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 7
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 6
+                    }
+                }
+            },
+            Name: bar,
+            Pure: true
+        }
+    }
+}

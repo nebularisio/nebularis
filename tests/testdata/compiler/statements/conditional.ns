@@ -1,0 +1,15 @@
+
+fn boo(a int32) int32 {
+    if a == 0 {
+        return 2;
+    }
+    ...;
+}
+
+fn zoo(a int32) int32 {
+    if a == 0 {
+        return 2;
+    } else {
+        return 5;
+    }
+}

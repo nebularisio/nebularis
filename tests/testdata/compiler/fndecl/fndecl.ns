@@ -1,0 +1,25 @@
+
+fn foo() {}
+
+fn foo2(a int32) int32 {
+    return a;
+}
+
+fn foo3(a int32) where a > 2 {}
+
+[zoo{i: 2}]
+fn foo4() int32 {
+    return 5;
+}
+
+fn (q) foo5() int32 {
+    return value.member;
+}
+
+fn <Q, T> foo6(q Q, t T) {
+    ...
+}
+
+pure fn <Q, T> (z) foo7(q Q, t T) {
+    ...
+}

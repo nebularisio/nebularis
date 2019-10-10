@@ -1,0 +1,124 @@
+CompilationUnit {
+    Module: ModuleDeclaration {
+        Attributes: []{
+            Attribute {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 1
+                    }
+                },
+                Value: StructExpression {
+                    Assignments: []{
+                        FieldAssignment {
+                            Name: b,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 5,
+                                    Line: 1
+                                }
+                            },
+                            Value: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 8,
+                                        Line: 1
+                                    }
+                                },
+                                Value: IntLiteral {
+                                    Value: 23
+                                }
+                            }
+                        }
+                    },
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 1,
+                            Line: 1
+                        }
+                    },
+                    Type: TypeReference {
+                        Name: doo,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 1,
+                                Line: 1
+                            }
+                        }
+                    }
+                }
+            },
+            Attribute {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                },
+                Value: StructExpression {
+                    Assignments: []{
+                        FieldAssignment {
+                            Name: b,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 5,
+                                    Line: 2
+                                }
+                            },
+                            Value: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 8,
+                                        Line: 2
+                                    }
+                                },
+                                Value: IntLiteral {
+                                    Value: 23
+                                }
+                            }
+                        },
+                        FieldAssignment {
+                            Name: q,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 2
+                                }
+                            },
+                            Value: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 15,
+                                        Line: 2
+                                    }
+                                },
+                                Value: IntLiteral {
+                                    Value: 46
+                                }
+                            }
+                        }
+                    },
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 1,
+                            Line: 2
+                        }
+                    },
+                    Type: TypeReference {
+                        Name: zoo,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 1,
+                                Line: 2
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        Name: foo,
+        NodeBase: NodeBase {
+            Location: Location {
+                Line: 1
+            }
+        }
+    }
+}

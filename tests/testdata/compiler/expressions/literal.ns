@@ -1,0 +1,6 @@
+
+fn foo() {
+    var v = "string";
+    var q = 23;
+    var z = true;
+}

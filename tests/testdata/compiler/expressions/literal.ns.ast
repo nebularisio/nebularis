@@ -1,0 +1,84 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 3
+                                }
+                            },
+                            Value: StringLiteral {
+                                Value: "string"
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    },
+                    VariableStatement {
+                        Initializer: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 4
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 23
+                            }
+                        },
+                        Name: q,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 4
+                            }
+                        }
+                    },
+                    VariableStatement {
+                        Initializer: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 5
+                                }
+                            },
+                            Value: BoolLiteral {
+                                Value: true
+                            }
+                        },
+                        Name: z,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 5
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        }
+    }
+}

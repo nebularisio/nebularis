@@ -1,0 +1,8 @@
+
+fn foo() int32 {
+    return 0;
+}
+
+fn bar() {
+    return;
+}

@@ -1,0 +1,506 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 23,
+                        Line: 4
+                    }
+                },
+                Statements: []{
+                    ReturnStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 5
+                            }
+                        },
+                        Value: IdentifierExpression {
+                            Identifier: a,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 11,
+                                    Line: 5
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 4
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 8,
+                                Line: 4
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 10,
+                                    Line: 4
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 17,
+                            Line: 4
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: foo2
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 29,
+                        Line: 8
+                    }
+                }
+            },
+            Constraints: []{
+                WhereClause {
+                    Expression: BinaryExpression {
+                        Left: IdentifierExpression {
+                            Identifier: a,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 23,
+                                    Line: 8
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 23,
+                                Line: 8
+                            }
+                        },
+                        Op: >,
+                        Right: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 27,
+                                    Line: 8
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 2
+                            }
+                        }
+                    },
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 17,
+                            Line: 8
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 8
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 8,
+                                Line: 8
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 10,
+                                    Line: 8
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                }
+            },
+            Name: foo3
+        },
+        FunctionDeclaration {
+            Attributes: []{
+                Attribute {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Line: 10
+                        }
+                    },
+                    Value: StructExpression {
+                        Assignments: []{
+                            FieldAssignment {
+                                Name: i,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 5,
+                                        Line: 10
+                                    }
+                                },
+                                Value: LiteralExpression {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 8,
+                                            Line: 10
+                                        }
+                                    },
+                                    Value: IntLiteral {
+                                        Value: 2
+                                    }
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 1,
+                                Line: 10
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: zoo,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 1,
+                                    Line: 10
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 16,
+                        Line: 11
+                    }
+                },
+                Statements: []{
+                    ReturnStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 12
+                            }
+                        },
+                        Value: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 11,
+                                    Line: 12
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 5
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 10
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 10,
+                            Line: 11
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: foo4
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 20,
+                        Line: 15
+                    }
+                },
+                Statements: []{
+                    ReturnStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 16
+                            }
+                        },
+                        Value: MemberAccessExpression {
+                            Member: member,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 11,
+                                    Line: 16
+                                }
+                            },
+                            Target: ValueExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 11,
+                                        Line: 16
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 15
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 14,
+                            Line: 15
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: foo5,
+            Target: TypeReference {
+                Name: q,
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 4,
+                        Line: 15
+                    }
+                }
+            }
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 25,
+                        Line: 19
+                    }
+                },
+                Statements: []{
+                    NotYetImplementedStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 20
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 19
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: q,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 15,
+                                Line: 19
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: Q,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 17,
+                                    Line: 19
+                                }
+                            }
+                        }
+                    },
+                    FunctionParameter {
+                        Name: t,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 20,
+                                Line: 19
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: T,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 22,
+                                    Line: 19
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            Name: foo6,
+            TypeParameters: []{
+                TypeParameter {
+                    Name: Q,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 4,
+                            Line: 19
+                        }
+                    }
+                },
+                TypeParameter {
+                    Name: T,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 7,
+                            Line: 19
+                        }
+                    }
+                }
+            }
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 34,
+                        Line: 23
+                    }
+                },
+                Statements: []{
+                    NotYetImplementedStatement {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 24
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 23
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: q,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 24,
+                                Line: 23
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: Q,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 26,
+                                    Line: 23
+                                }
+                            }
+                        }
+                    },
+                    FunctionParameter {
+                        Name: t,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 29,
+                                Line: 23
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: T,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 31,
+                                    Line: 23
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            Name: foo7,
+            Pure: true,
+            Target: TypeReference {
+                Name: z,
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 16,
+                        Line: 23
+                    }
+                }
+            },
+            TypeParameters: []{
+                TypeParameter {
+                    Name: Q,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 9,
+                            Line: 23
+                        }
+                    }
+                },
+                TypeParameter {
+                    Name: T,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 12,
+                            Line: 23
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

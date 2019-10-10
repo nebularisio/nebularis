@@ -1,0 +1,10 @@
+
+type foo int32 where value > 2;
+
+type bar struct {
+    zar int32 where value != 3
+};
+
+type zoo interface {
+    goo(a int32, b string) where a > 8 where len(b) > 3
+};

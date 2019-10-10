@@ -1,0 +1,179 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: InvocationExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 3
+                                }
+                            },
+                            Target: IdentifierExpression {
+                                Identifier: bar,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 3
+                                    }
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 10,
+                        Line: 6
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: InvocationExpression {
+                            Arguments: []{
+                                LiteralExpression {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 16,
+                                            Line: 7
+                                        }
+                                    },
+                                    Value: StringLiteral {
+                                        Value: "a"
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 7
+                                }
+                            },
+                            Target: IdentifierExpression {
+                                Identifier: bar,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 7
+                                    }
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 7
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 6
+                    }
+                }
+            },
+            Name: foo2
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 10,
+                        Line: 10
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: InvocationExpression {
+                            Arguments: []{
+                                LiteralExpression {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 16,
+                                            Line: 11
+                                        }
+                                    },
+                                    Value: StringLiteral {
+                                        Value: "a"
+                                    }
+                                },
+                                LiteralExpression {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 21,
+                                            Line: 11
+                                        }
+                                    },
+                                    Value: IntLiteral {
+                                        Value: 23
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 11
+                                }
+                            },
+                            Target: IdentifierExpression {
+                                Identifier: bar,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 11
+                                    }
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 11
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 10
+                    }
+                }
+            },
+            Name: foo3
+        }
+    }
+}

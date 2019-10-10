@@ -1,0 +1,72 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: TernaryExpression {
+                            Condition: IdentifierExpression {
+                                Identifier: a,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 3
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 3
+                                }
+                            },
+                            OnFalse: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 20,
+                                        Line: 3
+                                    }
+                                },
+                                Value: IntLiteral {
+                                    Value: 3
+                                }
+                            },
+                            OnTrue: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 16,
+                                        Line: 3
+                                    }
+                                },
+                                Value: IntLiteral {
+                                    Value: 2
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        }
+    }
+}

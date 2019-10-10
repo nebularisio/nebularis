@@ -1,0 +1,21 @@
+CompilationUnit {
+    Declarations: []{
+        TypeDeclaration {
+            Name: foo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 2
+                }
+            },
+            Spec: PrimitiveType {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Primitive: int32
+            }
+        }
+    }
+}

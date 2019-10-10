@@ -1,0 +1,4 @@
+
+fn foo() {
+    var v = boo{i: 1, z: 2};
+}

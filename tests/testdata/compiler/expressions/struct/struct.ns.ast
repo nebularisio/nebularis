@@ -1,0 +1,92 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: StructExpression {
+                            Assignments: []{
+                                FieldAssignment {
+                                    Name: i,
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 16,
+                                            Line: 3
+                                        }
+                                    },
+                                    Value: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 19,
+                                                Line: 3
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 1
+                                        }
+                                    }
+                                },
+                                FieldAssignment {
+                                    Name: z,
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 22,
+                                            Line: 3
+                                        }
+                                    },
+                                    Value: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 25,
+                                                Line: 3
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 2
+                                        }
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 3
+                                }
+                            },
+                            Type: TypeReference {
+                                Name: boo,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 3
+                                    }
+                                }
+                            }
+                        },
+                        Name: v,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                }
+            },
+            Name: foo
+        }
+    }
+}

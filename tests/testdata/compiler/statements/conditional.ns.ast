@@ -1,0 +1,277 @@
+CompilationUnit {
+    Declarations: []{
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 22,
+                        Line: 2
+                    }
+                },
+                Statements: []{
+                    ConditionalStatement {
+                        Condition: BinaryExpression {
+                            Left: IdentifierExpression {
+                                Identifier: a,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 7,
+                                        Line: 3
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 7,
+                                    Line: 3
+                                }
+                            },
+                            Op: ==,
+                            Right: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 3
+                                    }
+                                },
+                                Value: IntLiteral {
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 3
+                            }
+                        },
+                        OnTrue: CodeBlock {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 3
+                                }
+                            },
+                            Statements: []{
+                                ReturnStatement {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 8,
+                                            Line: 4
+                                        }
+                                    },
+                                    Value: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 15,
+                                                Line: 4
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 2
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    ExpressionStatement {
+                        Expression: NotYetImplementedExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 4,
+                                    Line: 6
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 6
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 2
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 7,
+                                Line: 2
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 9,
+                                    Line: 2
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 16,
+                            Line: 2
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: boo
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 22,
+                        Line: 9
+                    }
+                },
+                Statements: []{
+                    ConditionalStatement {
+                        Condition: BinaryExpression {
+                            Left: IdentifierExpression {
+                                Identifier: a,
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 7,
+                                        Line: 10
+                                    }
+                                }
+                            },
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 7,
+                                    Line: 10
+                                }
+                            },
+                            Op: ==,
+                            Right: LiteralExpression {
+                                NodeBase: NodeBase {
+                                    Location: Location {
+                                        Column: 12,
+                                        Line: 10
+                                    }
+                                },
+                                Value: IntLiteral {
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 10
+                            }
+                        },
+                        OnFalse: CodeBlock {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 11,
+                                    Line: 12
+                                }
+                            },
+                            Statements: []{
+                                ReturnStatement {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 8,
+                                            Line: 13
+                                        }
+                                    },
+                                    Value: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 15,
+                                                Line: 13
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 5
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        OnTrue: CodeBlock {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 10
+                                }
+                            },
+                            Statements: []{
+                                ReturnStatement {
+                                    NodeBase: NodeBase {
+                                        Location: Location {
+                                            Column: 8,
+                                            Line: 11
+                                        }
+                                    },
+                                    Value: LiteralExpression {
+                                        NodeBase: NodeBase {
+                                            Location: Location {
+                                                Column: 15,
+                                                Line: 11
+                                            }
+                                        },
+                                        Value: IntLiteral {
+                                            Value: 2
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 9
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 7,
+                                Line: 9
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 9,
+                                    Line: 9
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 16,
+                            Line: 9
+                        }
+                    },
+                    Primitive: int32
+                }
+            },
+            Name: zoo
+        }
+    }
+}

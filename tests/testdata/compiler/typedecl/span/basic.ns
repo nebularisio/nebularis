@@ -1,0 +1,6 @@
+
+type tSpanBool []bool;
+
+type tNullableSpanInt32 ?[]int32;
+
+type tSpanNullableInt32 []?int32;

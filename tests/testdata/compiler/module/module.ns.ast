@@ -1,0 +1,10 @@
+CompilationUnit {
+    Module: ModuleDeclaration {
+        Name: foo,
+        NodeBase: NodeBase {
+            Location: Location {
+                Line: 1
+            }
+        }
+    }
+}

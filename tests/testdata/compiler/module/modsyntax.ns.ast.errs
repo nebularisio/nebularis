@@ -1,0 +1,1 @@
+E 1000 (1,0) Syntax Error: 'extraneous input 'mod' expecting {<EOF>, 'extern', 'fn', 'import', 'module', 'public', 'pure', 'type', '['}'

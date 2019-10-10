@@ -1,0 +1,298 @@
+CompilationUnit {
+    Declarations: []{
+        TypeDeclaration {
+            Name: action,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 2
+                }
+            },
+            Spec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 12,
+                        Line: 2
+                    }
+                }
+            }
+        },
+        TypeDeclaration {
+            Name: foo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 4
+                }
+            },
+            Spec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 4
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 12,
+                                Line: 4
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 4
+                                }
+                            },
+                            Primitive: int32
+                        }
+                    },
+                    FunctionParameter {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 19,
+                                Line: 4
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 19,
+                                    Line: 4
+                                }
+                            },
+                            Primitive: string
+                        }
+                    },
+                    FunctionParameter {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 27,
+                                Line: 4
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 27,
+                                    Line: 4
+                                }
+                            },
+                            Primitive: bool
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 33,
+                            Line: 4
+                        }
+                    },
+                    Primitive: string
+                }
+            }
+        },
+        TypeDeclaration {
+            Constraints: []{
+                WhereClause {
+                    Expression: BinaryExpression {
+                        Left: IdentifierExpression {
+                            Identifier: a,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 35,
+                                    Line: 6
+                                }
+                            }
+                        },
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 35,
+                                Line: 6
+                            }
+                        },
+                        Op: <=,
+                        Right: LiteralExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 40,
+                                    Line: 6
+                                }
+                            },
+                            Value: IntLiteral {
+                                Value: 23
+                            }
+                        }
+                    },
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 29,
+                            Line: 6
+                        }
+                    }
+                }
+            },
+            Name: zoo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 6
+                }
+            },
+            Spec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 6
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: a,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 12,
+                                Line: 6
+                            }
+                        },
+                        Type: PrimitiveType {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 14,
+                                    Line: 6
+                                }
+                            },
+                            Primitive: string
+                        }
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 22,
+                            Line: 6
+                        }
+                    },
+                    Primitive: string
+                }
+            }
+        },
+        TypeDeclaration {
+            Attributes: []{
+                Attribute {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Line: 8
+                        }
+                    },
+                    Value: StructExpression {
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 1,
+                                Line: 8
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: z,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 1,
+                                    Line: 8
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            Name: goo,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 8
+                }
+            },
+            Spec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 9,
+                        Line: 9
+                    }
+                },
+                ReturnType: PrimitiveType {
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 14,
+                            Line: 9
+                        }
+                    },
+                    Primitive: string
+                }
+            }
+        },
+        TypeDeclaration {
+            Name: gen,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 11
+                }
+            },
+            Spec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 15,
+                        Line: 11
+                    }
+                },
+                Parameters: []{
+                    FunctionParameter {
+                        Name: t,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 18,
+                                Line: 11
+                            }
+                        },
+                        Type: TypeReference {
+                            Name: T,
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 20,
+                                    Line: 11
+                                }
+                            }
+                        }
+                    }
+                },
+                ReturnType: TypeReference {
+                    Name: Q,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 23,
+                            Line: 11
+                        }
+                    }
+                }
+            },
+            TypeParameters: []{
+                TypeParameter {
+                    Name: T,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 9,
+                            Line: 11
+                        }
+                    }
+                },
+                TypeParameter {
+                    Name: Q,
+                    NodeBase: NodeBase {
+                        Location: Location {
+                            Column: 12,
+                            Line: 11
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

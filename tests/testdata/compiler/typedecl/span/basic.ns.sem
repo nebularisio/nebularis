@@ -1,0 +1,32 @@
+Semantics {
+    Modules: {
+        $default: Module {
+            Functions: {
+            },
+            Name: $default,
+            References: {
+            },
+            Types: {
+                tNullableSpanInt32: NullableType {
+                    InnerType: SpanType {
+                        InnerType: PrimitiveType {
+                            PrimitiveKind: int32
+                        }
+                    }
+                },
+                tSpanBool: SpanType {
+                    InnerType: PrimitiveType {
+                        PrimitiveKind: bool
+                    }
+                },
+                tSpanNullableInt32: SpanType {
+                    InnerType: NullableType {
+                        InnerType: PrimitiveType {
+                            PrimitiveKind: int32
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

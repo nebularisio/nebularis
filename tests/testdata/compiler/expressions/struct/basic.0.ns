@@ -1,0 +1,6 @@
+
+[Empty{}]
+[Single{}]
+[Single{f1: 23}]
+[Multiple{f1: "foo", f2: true}]
+type zoo int32;

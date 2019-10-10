@@ -1,0 +1,23 @@
+
+fn foo(a int32) {
+    while true {
+        a++;
+        if a < 10 {
+            continue;
+        }
+        break;
+    }
+}
+
+fn foo(a int32) {
+    lab:
+    while true {
+        while a > 10 {
+            a = a + 2;
+            if a > 43 {
+                continue lab;
+            }
+            a--;
+        }
+    }
+}

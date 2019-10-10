@@ -1,0 +1,33 @@
+
+fn boo(i int32) int32 {
+    switch i {
+        case 10, 12: {
+            return 7;
+        }
+
+        case 8:
+
+        case 11, 9, 23:
+            return 5;
+
+        case 99: {
+            return 6;
+        }
+
+        default:
+            return 0;
+    }
+    return 9;
+}
+
+fn zoo(i int32) int32 {
+    switch i {
+        case 10, 12: {
+            return 7;
+        }
+
+        default: {
+            return 0;
+        }
+    }
+}

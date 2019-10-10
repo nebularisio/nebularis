@@ -1,0 +1,67 @@
+CompilationUnit {
+    Declarations: []{
+        TypeDeclaration {
+            Name: t,
+            NodeBase: NodeBase {
+                Location: Location {
+                    Line: 2
+                }
+            },
+            Spec: PrimitiveType {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 7,
+                        Line: 2
+                    }
+                },
+                Primitive: int32
+            }
+        },
+        FunctionDeclaration {
+            Body: CodeBlock {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 13,
+                        Line: 4
+                    }
+                },
+                Statements: []{
+                    VariableStatement {
+                        Initializer: ValueExpression {
+                            NodeBase: NodeBase {
+                                Location: Location {
+                                    Column: 12,
+                                    Line: 5
+                                }
+                            }
+                        },
+                        Name: q,
+                        NodeBase: NodeBase {
+                            Location: Location {
+                                Column: 4,
+                                Line: 5
+                            }
+                        }
+                    }
+                }
+            },
+            FunctionTypeSpec: FunctionTypeSpec {
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Line: 4
+                    }
+                }
+            },
+            Name: foo,
+            Target: TypeReference {
+                Name: t,
+                NodeBase: NodeBase {
+                    Location: Location {
+                        Column: 4,
+                        Line: 4
+                    }
+                }
+            }
+        }
+    }
+}
