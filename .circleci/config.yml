@@ -15,4 +15,4 @@ jobs:
     working_directory: /go/src/github.com/nebularisio/nebularis
     steps:
       - checkout
-      - run: make
+      - run: make presubmit

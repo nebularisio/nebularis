@@ -11,9 +11,16 @@ ifeq ($(DIFF),)
 endif
 
 .PHONY: default
-default: check-license build lint test # TODO: Re-add gen target when it can work in CircleCI
+default: generate check.license build lint test
 
-.PHONY: gen
+.PHONY: presubmit
+presubmit: check.license build presubmit.lint test   # TODO: presubmit.generate
+
+.PHONY: presubmit.lint
+presubmit.lint:
+	docker run --rm -v $(REPO_ROOT):/app -w /app golangci/golangci-lint:v1.20.0 golangci-lint run
+
+.PHONY: generate
 gen: lib/$(ANTLR_JAR)
 	$(REPO_ROOT)/bin/genparser.sh
 
@@ -40,7 +47,7 @@ format:
 	goimports -local nebularis.io -w .
 
 .PHONY: check-license
-check-license:
+check.license:
 	$(REPO_ROOT)/bin/checklicense.sh
 
 update-baselines:
