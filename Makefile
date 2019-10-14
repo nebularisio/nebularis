@@ -14,15 +14,10 @@ endif
 default: generate check.license build lint test
 
 .PHONY: presubmit
-presubmit: check.license build presubmit.lint test   # TODO: presubmit.generate
-
-.PHONY: presubmit.lint
-presubmit.lint:
-#	docker run --rm -v $(REPO_ROOT):/app -w /app golangci/golangci-lint:v1.20.0 golangci-lint run
-	golangci-lint run $(REPO_ROOT)/...
+presubmit: check.license build test   # TODO: presubmit.generate & presubmit.lint
 
 .PHONY: generate
-gen: lib/$(ANTLR_JAR)
+generate: lib/$(ANTLR_JAR)
 	$(REPO_ROOT)/bin/genparser.sh
 
 lib/$(ANTLR_JAR):
@@ -36,7 +31,7 @@ build:
 test:
 	go test -v -race -cover -coverprofile $(REPO_ROOT)/cover.out -coverpkg $(COVER_PACKAGES) $(REPO_ROOT)/tests/...
 
-test-diff:
+test.diff:
 	rm -rf $(REPO_ROOT)/out
 	-go test $(REPO_ROOT)/tests/... -diffout $(REPO_ROOT)/out
 	${DIFF} $(REPO_ROOT)/tests/testdata/compiler $(REPO_ROOT)/out -merge $(REPO_ROOT)/tests/testdata/compiler
