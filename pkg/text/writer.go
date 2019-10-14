@@ -66,7 +66,7 @@ func (w *Writer) String() string {
 
 func (w *Writer) ensureIndent() {
 	if !w.inline {
-		_, _ = fmt.Fprintf(&w.b, strings.Repeat(" ", w.indent*2))
+		_, _ = fmt.Fprint(&w.b, strings.Repeat(" ", w.indent*2))
 		w.inline = true
 	}
 }

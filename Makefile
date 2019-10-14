@@ -11,10 +11,13 @@ ifeq ($(DIFF),)
 endif
 
 .PHONY: default
-default: gen check-license build lint test
+default: generate check.license build lint test
 
-.PHONY: gen
-gen: lib/$(ANTLR_JAR)
+.PHONY: presubmit
+presubmit: check.license build test   # TODO: presubmit.generate & presubmit.lint
+
+.PHONY: generate
+generate: lib/$(ANTLR_JAR)
 	$(REPO_ROOT)/bin/genparser.sh
 
 lib/$(ANTLR_JAR):
@@ -28,7 +31,7 @@ build:
 test:
 	go test -v -race -cover -coverprofile $(REPO_ROOT)/cover.out -coverpkg $(COVER_PACKAGES) $(REPO_ROOT)/tests/...
 
-test-diff:
+test.diff:
 	rm -rf $(REPO_ROOT)/out
 	-go test $(REPO_ROOT)/tests/... -diffout $(REPO_ROOT)/out
 	${DIFF} $(REPO_ROOT)/tests/testdata/compiler $(REPO_ROOT)/out -merge $(REPO_ROOT)/tests/testdata/compiler
@@ -40,7 +43,7 @@ format:
 	goimports -local nebularis.io -w .
 
 .PHONY: check-license
-check-license:
+check.license:
 	$(REPO_ROOT)/bin/checklicense.sh
 
 update-baselines:
