@@ -18,7 +18,8 @@ presubmit: check.license build presubmit.lint test   # TODO: presubmit.generate
 
 .PHONY: presubmit.lint
 presubmit.lint:
-	docker run --rm -v $(REPO_ROOT):/app -w /app golangci/golangci-lint:v1.20.0 golangci-lint run
+#	docker run --rm -v $(REPO_ROOT):/app -w /app golangci/golangci-lint:v1.20.0 golangci-lint run
+	golangci-lint run $(REPO_ROOT)/...
 
 .PHONY: generate
 gen: lib/$(ANTLR_JAR)
