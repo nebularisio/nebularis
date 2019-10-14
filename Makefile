@@ -11,7 +11,7 @@ ifeq ($(DIFF),)
 endif
 
 .PHONY: default
-default: gen check-license build lint test
+default: check-license build lint test # TODO: Re-add gen target when it can work in CircleCI
 
 .PHONY: gen
 gen: lib/$(ANTLR_JAR)
