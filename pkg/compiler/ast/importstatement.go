@@ -30,9 +30,11 @@ type ImportStatements []*ImportStatement
 
 func (n *ImportStatement) Write(w *text.Writer) {
 	w.W(n.Attributes).W("import ").W(&n.ModuleReference)
+
 	if n.Alias != nil {
 		w.W(" as ")
 		w.W(n.Alias)
 	}
+
 	w.W(";").Ln()
 }

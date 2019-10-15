@@ -29,8 +29,10 @@ func (ConditionalStatement) Kind() StatementKind { return StIf }
 
 func (n *ConditionalStatement) Write(w *text.Writer) {
 	w.W("if ").W(n.Condition).W(" ").W(n.OnTrue)
+
 	if n.OnFalse != nil {
 		w.W(" else ").W(n.OnFalse)
 	}
+
 	w.Ln()
 }

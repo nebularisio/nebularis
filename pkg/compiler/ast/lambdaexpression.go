@@ -37,11 +37,13 @@ func (i *LambdaExpression) Write(w *text.Writer) {
 
 	if i.ReturnType != nil {
 		w.W(i.ReturnType).W(" ")
-
 	}
+
 	w.W(i.Constraints)
+
 	if len(i.Constraints) > 0 {
 		w.W(" ")
 	}
+
 	w.W(i.Body)
 }

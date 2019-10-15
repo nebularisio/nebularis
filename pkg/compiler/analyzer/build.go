@@ -87,25 +87,18 @@ func (c *context) createTypeDeclaration(m *semantics.Module, decl *ast.TypeDecla
 	switch decl.Spec.Kind() {
 	case ast.Primitive:
 		t = c.createPrimitiveType(decl.Spec.(*ast.PrimitiveType), base)
-
 	case ast.Nullable:
 		t = c.createNullableType(decl.Spec.(*ast.NullableTypeSpec), base)
-
 	case ast.Span:
 		t = c.createSpanType(decl.Spec.(*ast.SpanTypeSpec), base)
-
 	case ast.Struct:
 		t = c.createStructType(decl.Spec.(*ast.StructType), base)
-
 	case ast.Interface:
 		t = c.createInterfaceType(decl.Spec.(*ast.InterfaceType), base)
-
 	case ast.Function:
 		t = c.createFunctionType(decl.Spec.(*ast.FunctionTypeSpec), base)
-
 	case ast.TypeRef:
 		t = c.createReferencedType(decl.Spec.(*ast.TypeReference), base)
-
 	default:
 		c.m.Append(msg.Internal(decl.Spec.Loc(), "Unrecognized type: %v", decl.Spec.Kind()))
 	}
@@ -119,31 +112,25 @@ func (c *context) createPrimitiveType(p *ast.PrimitiveType, base semantics.TypeB
 	}
 }
 
-func (c *context) createType(s ast.TypeSpec, a ast.Attributes, p ast.TypeParameters, w ast.WhereClauses) semantics.Type {
+func (c *context) createType(s ast.TypeSpec, a ast.Attributes, p ast.TypeParameters, w ast.WhereClauses) semantics.Type { // nolint:unparam
+	// TODO: remove nolint:unparam
 	base := c.createTypeBase(a, p, w)
 
 	switch s.Kind() {
 	case ast.Primitive:
 		return c.createPrimitiveType(s.(*ast.PrimitiveType), base)
-
 	case ast.Nullable:
 		return c.createNullableType(s.(*ast.NullableTypeSpec), base)
-
 	case ast.Span:
 		return c.createSpanType(s.(*ast.SpanTypeSpec), base)
-
 	case ast.Struct:
 		return c.createStructType(s.(*ast.StructType), base)
-
 	case ast.Interface:
 		return c.createInterfaceType(s.(*ast.InterfaceType), base)
-
 	case ast.Function:
 		return c.createFunctionType(s.(*ast.FunctionTypeSpec), base)
-
 	case ast.TypeRef:
 		return c.createReferencedType(s.(*ast.TypeReference), base)
-
 	default:
 		c.m.Append(msg.Internal(s.Loc(), "Unrecognized type: %v", s.Kind()))
 		return nil
@@ -192,7 +179,7 @@ func (c *context) createStructType(spec *ast.StructType, base semantics.TypeBase
 
 func (c *context) createInterfaceType(spec *ast.InterfaceType, base semantics.TypeBase) *semantics.InterfaceType {
 
-	var baseTypes []*semantics.ReferencedType
+	baseTypes := make([]*semantics.ReferencedType, len(spec.Extends))
 	for _, baseSpec := range spec.Extends {
 		baseType := c.createReferencedType(baseSpec, semantics.TypeBase{})
 		baseTypes = append(baseTypes, baseType)

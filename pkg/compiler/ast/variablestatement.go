@@ -32,11 +32,14 @@ func (VariableStatement) Kind() StatementKind { return StVariable }
 
 func (v *VariableStatement) Write(w *text.Writer) {
 	w.W("var ").W(v.Name)
+
 	if v.Type != nil {
 		w.W(" : ").W(v.Type)
 	}
+
 	if v.Initializer != nil {
 		w.W(" = ").W(v.Initializer)
 	}
+
 	w.W(";").Ln()
 }

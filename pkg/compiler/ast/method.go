@@ -30,9 +30,11 @@ var _ Node = &Method{}
 
 func (m *Method) Write(w *text.Writer) {
 	w.W(m.Attributes).W(m.Name).W(m.Parameters)
+
 	if m.ReturnType != nil {
 		w.W(" ").W(m.ReturnType)
 	}
+
 	if len(m.Constraints) > 0 {
 		w.W(" ").W(m.Constraints)
 	}

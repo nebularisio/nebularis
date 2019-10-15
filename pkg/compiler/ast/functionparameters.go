@@ -20,11 +20,14 @@ type FunctionParameters []*FunctionParameter
 
 func (s FunctionParameters) Write(w *text.Writer) {
 	w.W("(")
+
 	for i, p := range s {
 		if i != 0 {
 			w.W(", ")
 		}
+
 		w.W(p)
 	}
+
 	w.W(")")
 }

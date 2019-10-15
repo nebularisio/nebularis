@@ -65,9 +65,10 @@ func runSubTests(t *testing.T, folder, outFolder string) {
 
 	for _, f := range files {
 		if f.IsDir() {
+			file := f.Name()
 			t.Run(f.Name(), func(t *testing.T) {
-				subFolder := path.Join(folder, f.Name())
-				subOutFolder := path.Join(outFolder, f.Name())
+				subFolder := path.Join(folder, file)
+				subOutFolder := path.Join(outFolder, file)
 				err := os.MkdirAll(subOutFolder, os.ModePerm)
 				if err != nil {
 					t.Fatalf("error creating output folder %q: %v", subOutFolder, err)

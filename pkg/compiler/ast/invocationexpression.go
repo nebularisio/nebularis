@@ -30,11 +30,14 @@ func (i *InvocationExpression) Kind() ExpressionKind {
 
 func (i *InvocationExpression) Write(w *text.Writer) {
 	w.W(i.Target).W("(")
+
 	for i, e := range i.Arguments {
 		if i > 0 {
 			w.W(", ")
 		}
+
 		w.W(e)
 	}
+
 	w.W(")")
 }

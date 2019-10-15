@@ -38,9 +38,12 @@ func (s *StructType) Write(w *text.Writer) {
 			if i > 0 {
 				w.Ln()
 			}
+
 			w.W(f)
 		}
+
 		w.Dedent()
 	}
+
 	w.W("}")
 }

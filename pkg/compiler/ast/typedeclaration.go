@@ -34,11 +34,14 @@ func (t *TypeDeclaration) Kind() DeclarationKind         { return DeclType }
 func (t *TypeDeclaration) LocalName() common.Identifier  { return t.Name }
 func (t *TypeDeclaration) DeclLocation() common.Location { return t.Location }
 
-func (i *TypeDeclaration) Write(w *text.Writer) {
-	w.W(i.Attributes).W("type ").W(i.Name).W(i.TypeParameters)
-	w.W(" ").W(i.Spec)
-	if len(i.Constraints) > 0 {
-		w.W(" ").W(i.Constraints)
+func (t *TypeDeclaration) Write(w *text.Writer) {
+	w.W(t.Attributes).W("type ").W(t.Name).W(t.TypeParameters)
+
+	w.W(" ").W(t.Spec)
+
+	if len(t.Constraints) > 0 {
+		w.W(" ").W(t.Constraints)
 	}
+
 	w.W(";").Ln()
 }

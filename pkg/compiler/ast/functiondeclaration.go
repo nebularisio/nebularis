@@ -38,33 +38,42 @@ func (t *FunctionDeclaration) Kind() DeclarationKind         { return DeclFuncti
 func (t *FunctionDeclaration) LocalName() common.Identifier  { return t.Name }
 func (t *FunctionDeclaration) DeclLocation() common.Location { return t.Location }
 
-func (s *FunctionDeclaration) Write(w *text.Writer) {
-	w.W(s.Attributes)
-	if s.Extern {
+func (t *FunctionDeclaration) Write(w *text.Writer) {
+	w.W(t.Attributes)
+
+	if t.Extern {
 		w.Fmt("extern ")
 	}
-	if s.Public {
+
+	if t.Public {
 		w.Fmt("public ")
 	}
-	if s.Pure {
+
+	if t.Pure {
 		w.Fmt("pure ")
 	}
+
 	w.W("fn ")
 
-	w.W(s.TypeParameters)
-	if len(s.TypeParameters) != 0 {
+	w.W(t.TypeParameters)
+
+	if len(t.TypeParameters) != 0 {
 		w.W(" ")
 	}
 
-	if s.Target != nil {
-		w.W("(").W(s.Target).W(") ")
+	if t.Target != nil {
+		w.W("(").W(t.Target).W(") ")
 	}
-	w.W(s.Name).W(s.Parameters).W(" ")
-	if s.ReturnType != nil {
-		w.W(s.ReturnType).W(" ")
+
+	w.W(t.Name).W(t.Parameters).W(" ")
+
+	if t.ReturnType != nil {
+		w.W(t.ReturnType).W(" ")
 	}
-	if len(s.Constraints) > 0 {
-		w.W(s.Constraints).W(" ")
+
+	if len(t.Constraints) > 0 {
+		w.W(t.Constraints).W(" ")
 	}
-	w.W(s.Body).Ln()
+
+	w.W(t.Body).Ln()
 }
