@@ -14,7 +14,7 @@ endif
 default: generate check.license build lint test
 
 .PHONY: presubmit
-presubmit: check.license build test   # TODO: presubmit.generate & presubmit.lint
+presubmit: check.license build lint test   # TODO: presubmit.generate
 
 .PHONY: generate
 generate: lib/$(ANTLR_JAR)

@@ -6,7 +6,6 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.13.1
-      - image: golangci/golangci-lint:v1.20.0
 
     #### TEMPLATE_NOTE: go expects specific checkout path representing url
     #### expecting it in the form of
@@ -15,4 +14,5 @@ jobs:
     working_directory: /go/src/github.com/nebularisio/nebularis
     steps:
       - checkout
+      - run: go get -u github.com/golangci/golangci-lint/cmd/golangci-lint # TODO: Use a fixed version.
       - run: make presubmit
