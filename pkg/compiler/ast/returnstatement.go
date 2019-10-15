@@ -27,8 +27,10 @@ func (ReturnStatement) Kind() StatementKind { return StReturn }
 
 func (p *ReturnStatement) Write(w *text.Writer) {
 	w.W("return")
+
 	if p.Value != nil {
 		w.W(" ").W(p.Value)
 	}
+
 	w.W(";").Ln()
 }

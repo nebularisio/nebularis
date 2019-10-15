@@ -36,6 +36,7 @@ func (f FieldAssignments) Write(w *text.Writer) {
 		if i > 0 {
 			w.Fmt(", ")
 		}
+
 		w.W(a)
 	}
 }

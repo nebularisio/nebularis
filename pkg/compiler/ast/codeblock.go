@@ -28,11 +28,14 @@ func (e *CodeBlock) Write(w *text.Writer) {
 	if !e.Inline {
 		w.W("{")
 	}
+
 	if len(e.Statements) > 0 {
 		w.Ln().Indent()
+
 		for _, s := range e.Statements {
 			w.W(s)
 		}
+
 		w.Dedent()
 	}
 

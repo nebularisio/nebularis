@@ -30,8 +30,10 @@ func (BreakStatement) Kind() StatementKind { return StBreak }
 
 func (c *BreakStatement) Write(w *text.Writer) {
 	w.W("break")
+
 	if c.Label != nil {
 		w.W(" ").W(*c.Label)
 	}
+
 	w.W(";").Ln()
 }

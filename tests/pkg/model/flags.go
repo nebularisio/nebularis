@@ -17,11 +17,11 @@ package model
 import "flag"
 
 var (
-	updateBaselines bool
-	outFolder       string
+	updateBaselines bool   // nolint:gochecknoglobals
+	outFolder       string // nolint:gochecknoglobals
 )
 
-func init() {
+func init() { // nolint:gochecknoinits
 	flag.BoolVar(&updateBaselines, "ubl", false, "update the baseline files with the test results")
 	flag.StringVar(&outFolder, "diffout", "", "output folder for diffing")
 }

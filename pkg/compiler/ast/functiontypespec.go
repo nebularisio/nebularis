@@ -27,7 +27,7 @@ type FunctionTypeSpec struct {
 
 var _ TypeSpec = &FunctionTypeSpec{}
 
-func (f *FunctionTypeSpec) Kind() TypeKind {
+func (s *FunctionTypeSpec) Kind() TypeKind {
 	return Function
 }
 
@@ -39,6 +39,7 @@ func (s *FunctionTypeSpec) Write(w *text.Writer) {
 	}
 
 	s.Parameters.Write(w)
+
 	if s.ReturnType != nil {
 		w.W(" ").W(s.ReturnType)
 	}

@@ -36,10 +36,13 @@ func (s *SwitchStatement) Write(w *text.Writer) {
 	for _, c := range s.Cases {
 		w.Ln().W(c)
 	}
+
 	if s.Default != nil {
 		w.Ln().W(s.Default)
 	}
+
 	w.Dedent()
+
 	w.W("}").Ln()
 }
 
@@ -51,18 +54,23 @@ type CaseBlock struct {
 
 func (c *CaseBlock) Write(w *text.Writer) {
 	w.W("case ")
+
 	for i, exp := range c.Expressions {
 		if i > 0 {
 			w.W(", ")
 		}
+
 		w.W(exp)
 	}
+
 	w.W(":")
 
 	if !c.Body.Inline {
 		w.W(" ")
 	}
+
 	w.W(c.Body)
+
 	if !c.Body.Inline || len(c.Body.Statements) == 0 {
 		w.Ln()
 	}
@@ -77,11 +85,14 @@ type DefaultBlock struct {
 
 func (d *DefaultBlock) Write(w *text.Writer) {
 	w.W("default:")
+
 	if d.Body != nil {
 		if !d.Body.Inline {
 			w.W(" ")
 		}
+
 		w.W(d.Body)
+
 		if !d.Body.Inline {
 			w.Ln()
 		}

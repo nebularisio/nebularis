@@ -36,11 +36,14 @@ func (t TypeParameters) Write(w *text.Writer) {
 	}
 
 	w.W("<")
+
 	for i, p := range t {
 		if i > 0 {
 			w.W(", ")
 		}
+
 		w.W(p)
 	}
+
 	w.W(">")
 }

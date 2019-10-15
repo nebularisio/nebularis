@@ -34,6 +34,7 @@ func (c WhereClauses) Write(w *text.Writer) {
 		if i > 0 {
 			w.W(" ")
 		}
+
 		w.W(wc)
 	}
 }

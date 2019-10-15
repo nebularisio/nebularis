@@ -34,14 +34,18 @@ func (t *TypeReference) Kind() TypeKind { return TypeRef }
 
 func (t *TypeReference) Write(w *text.Writer) {
 	w.W(t.Name)
+
 	if len(t.TypeArguments) > 0 {
 		w.W("<")
+
 		for i, a := range t.TypeArguments {
 			if i > 0 {
 				w.W(", ")
 			}
+
 			w.W(a)
 		}
+
 		w.W(">")
 	}
 }

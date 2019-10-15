@@ -24,10 +24,10 @@ type IndexExpression struct {
 
 var _ Expression = &IndexExpression{}
 
-func (i *IndexExpression) Kind() ExpressionKind {
+func (e *IndexExpression) Kind() ExpressionKind {
 	return ExprIndex
 }
 
-func (n *IndexExpression) Write(w *text.Writer) {
-	w.W(n.Target).W("[").W(n.Index).W("]")
+func (e *IndexExpression) Write(w *text.Writer) {
+	w.W(e.Target).W("[").W(e.Index).W("]")
 }

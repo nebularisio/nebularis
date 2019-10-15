@@ -39,17 +39,20 @@ func (w *Writer) Dedent() *Writer {
 
 func (w *Writer) W(v interface{}) *Writer {
 	w.ensureIndent()
+
 	if wr, ok := v.(Writeable); ok {
 		wr.Write(w)
 	} else {
 		w.Fmt("%v", v)
 	}
+
 	return w
 }
 
 func (w *Writer) Fmt(format string, args ...interface{}) *Writer {
 	w.ensureIndent()
 	w.write(format, args...)
+
 	return w
 }
 
@@ -57,6 +60,7 @@ func (w *Writer) FmtLn(format string, args ...interface{}) *Writer {
 	w.ensureIndent()
 	w.write(format, args...)
 	w.Ln()
+
 	return w
 }
 
@@ -87,5 +91,6 @@ func (w *Writer) write(format string, args ...interface{}) {
 func (w *Writer) Ln() *Writer {
 	_, _ = fmt.Fprintln(&w.b)
 	w.inline = false
+
 	return w
 }

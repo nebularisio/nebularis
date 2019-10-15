@@ -31,5 +31,6 @@ func (s *FunctionParameter) Write(w *text.Writer) {
 	if s.Name != nil {
 		w.W(*s.Name).W(" ")
 	}
+
 	w.W(s.Type)
 }

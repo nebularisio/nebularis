@@ -33,7 +33,7 @@ import (
 )
 
 var (
-	indexSuffixPattern = regexp.MustCompile(`\.\d+`)
+	indexSuffixPattern = regexp.MustCompile(`\.\d+`) // nolint:gochecknoglobals
 )
 
 type TestCase struct {
@@ -131,30 +131,30 @@ func testName(baseName string, index int) string {
 	return fmt.Sprintf("%s[%d]", baseName, index)
 }
 
-func (tc *TestCase) hasSemantics() bool {
-	if tc.Semantics != nil {
+func (c *TestCase) hasSemantics() bool {
+	if c.Semantics != nil {
 		return true
 	}
 
-	if tc.CheckErrors != nil {
+	if c.CheckErrors != nil {
 		return true
 	}
 
 	return false
 }
 
-func (tc *TestCase) isEmpty() bool {
-	if tc.hasSemantics() {
+func (c *TestCase) isEmpty() bool {
+	if c.hasSemantics() {
 		return false
 	}
 
-	for _, a := range tc.Asts {
+	for _, a := range c.Asts {
 		if a != nil {
 			return false
 		}
 	}
 
-	for _, e := range tc.ParseErrors {
+	for _, e := range c.ParseErrors {
 		if e != nil {
 			return false
 		}
@@ -166,77 +166,33 @@ func (tc *TestCase) isEmpty() bool {
 func (c *TestCase) Run(t *testing.T, outfolder string) {
 	t.Run(c.Name, func(t *testing.T) {
 
-		var cus []*ast.CompilationUnit
+		for i := range c.Inputs {
+			index := i
+			if c.Asts[index] != nil {
 
-		for i, s := range c.Inputs {
-			var ms diag.Messages
-			cu := parser.ParseText(&ms, s)
-			if c.Asts[i] != nil {
-				t.Run(testName("ast", i), func(t *testing.T) {
-					actualAst := text.ToReflectString(cu)
-
-					writeFileOrFail(t, c.AstOutFilePath(i, outfolder), actualAst)
-					if !compare(actualAst, *c.Asts[i]) {
-						log(t, "Ast", actualAst, *c.Asts[i])
-						if UpdateBaselines() {
-							t.Logf("Updating Ast baselines...")
-							writeFileOrFail(t, c.AstFilePath(i), actualAst)
-						} else {
-							t.Fail()
-						}
-					}
-				})
-			}
-
-			if c.ParseErrors[i] != nil {
-				t.Run(testName("parse error", i), func(t *testing.T) {
-					actualErrs := ms.String()
-					if !compare(actualErrs, *c.ParseErrors[i]) {
-						log(t, "Parse Errors", actualErrs, *c.ParseErrors[i])
-						writeFileOrFail(t, c.ParseErrsOutFilePath(i, outfolder), actualErrs)
-						if UpdateBaselines() {
-							t.Logf("Updating Ast baselines...")
-							writeFileOrFail(t, c.ParseErrsFilePath(i), actualErrs)
-						} else {
-							t.Fail()
-						}
-					}
-				})
-			} else {
-				if ms.HasErrors() {
-					t.Fatalf("Unexpected parse errors:\n%v\n", ms)
+				if c.ParseErrors[index] == nil {
+					t.Run(testName("ast", index), func(t *testing.T) {
+						c.runAstTest(t, index, outfolder)
+					})
+					t.Run(testName("roundtrip", index), func(t *testing.T) {
+						c.runRoundtrippedTest(t, index, outfolder)
+					})
+				} else {
+					t.Run(testName("parse error", index), func(t *testing.T) {
+						c.runParseErrorTest(t, index, outfolder)
+					})
 				}
-
-				t.Run(testName("roundtrip", i), func(t *testing.T) {
-					var w text.Writer
-					cu.Write(&w)
-					txt := w.String()
-					var ms diag.Messages
-					roundtrippedCu := parser.ParseText(&ms, txt)
-					if ms.HasErrors() {
-						t.Fatalf("Unexpected parse errors:\n%s\n%v\n", txt, ms)
-					}
-
-					w = text.Writer{}
-					roundtrippedCu.Write(&w)
-					writeFileOrFail(t, path.Join(outfolder, c.Name+".ns"), w.String())
-					if !reflect.DeepEqual(roundtrippedCu, cu) {
-						t.Logf("----")
-						t.Logf("Output:\n%s\n", txt)
-						t.Logf("----")
-						t.Logf("Original: \n%s\n", text.ToReflectString(cu))
-						t.Logf("----")
-						t.Logf("Rounttripped: \n%s\n", text.ToReflectString(roundtrippedCu))
-						t.Logf("----")
-						t.Fail()
-					}
-				})
 			}
-
-			cus = append(cus, cu)
 		}
 
 		if c.hasSemantics() {
+			var cus []*ast.CompilationUnit
+			for _, in := range c.Inputs {
+				var m diag.Messages
+				cu := parser.ParseText(&m, in)
+				cus = append(cus, cu)
+			}
+
 			o := analyzer.Options{
 				Sources: cus,
 			}
@@ -244,39 +200,114 @@ func (c *TestCase) Run(t *testing.T, outfolder string) {
 
 			if c.Semantics != nil {
 				t.Run(testName("semantics", 0), func(t *testing.T) {
-					actualSem := text.ToReflectString(r.Semantics)
-					if !compare(actualSem, *c.Semantics) {
-						log(t, "semantics", actualSem, *c.Semantics)
-						writeFileOrFail(t, c.SemOutFilePath(outfolder), actualSem)
-						if UpdateBaselines() {
-							t.Logf("Updating semantics baselines...")
-							writeFileOrFail(t, c.SemFilePath(), actualSem)
-						} else {
-							t.Fail()
-						}
-					}
+					c.runSemanticsTest(t, r, outfolder)
 				})
 			}
 
 			if c.CheckErrors != nil {
 				t.Run(testName("semantic errors", 0), func(t *testing.T) {
-					actualErrs := r.Messages.String()
-					if !compare(actualErrs, *c.CheckErrors) {
-						log(t, "semantic errors", actualErrs, *c.CheckErrors)
-						writeFileOrFail(t, c.SemErrsOutFilePath(outfolder), actualErrs)
-						if UpdateBaselines() {
-							t.Logf("Updating semantic error baselines...")
-							writeFileOrFail(t, c.SemErrsFilePath(), actualErrs)
-						} else {
-							t.Fail()
-						}
-					}
+					c.runSemanticErrorsTest(t, r, outfolder)
 				})
 			} else if r.Messages.HasErrors() {
 				t.Fatalf("Unexpected semantic errors:\n%v\n", r.Messages)
 			}
 		}
 	})
+}
+
+func (c *TestCase) runSemanticsTest(t *testing.T, r analyzer.Result, outfolder string) {
+	actualSem := text.ToReflectString(r.Semantics)
+	if !compare(actualSem, *c.Semantics) {
+		log(t, "semantics", actualSem, *c.Semantics)
+		writeFileOrFail(t, c.SemOutFilePath(outfolder), actualSem)
+		if UpdateBaselines() {
+			t.Logf("Updating semantics baselines...")
+			writeFileOrFail(t, c.SemFilePath(), actualSem)
+		} else {
+			t.Fail()
+		}
+	}
+}
+
+func (c *TestCase) runSemanticErrorsTest(t *testing.T, r analyzer.Result, outfolder string) {
+	actualErrs := r.Messages.String()
+	if !compare(actualErrs, *c.CheckErrors) {
+		log(t, "semantic errors", actualErrs, *c.CheckErrors)
+		writeFileOrFail(t, c.SemErrsOutFilePath(outfolder), actualErrs)
+		if UpdateBaselines() {
+			t.Logf("Updating semantic error baselines...")
+			writeFileOrFail(t, c.SemErrsFilePath(), actualErrs)
+		} else {
+			t.Fail()
+		}
+	}
+}
+
+func (c *TestCase) runAstTest(t *testing.T, index int, outfolder string) {
+	var ms diag.Messages
+	cu := parser.ParseText(&ms, c.Inputs[index])
+
+	if ms.HasErrors() {
+		t.Fatalf("Unexpected parse errors:\n%v\n", ms)
+	}
+
+	actualAst := text.ToReflectString(cu)
+
+	writeFileOrFail(t, c.AstOutFilePath(index, outfolder), actualAst)
+	if !compare(actualAst, *c.Asts[index]) {
+		log(t, "Ast", actualAst, *c.Asts[index])
+		if UpdateBaselines() {
+			t.Logf("Updating Ast baselines...")
+			writeFileOrFail(t, c.AstFilePath(index), actualAst)
+		} else {
+			t.Fail()
+		}
+	}
+}
+
+func (c *TestCase) runParseErrorTest(t *testing.T, index int, outfolder string) {
+	var ms diag.Messages
+	_ = parser.ParseText(&ms, *c.Asts[index])
+
+	actualErrs := ms.String()
+	if !compare(actualErrs, *c.ParseErrors[index]) {
+		log(t, "Parse Errors", actualErrs, *c.ParseErrors[index])
+		writeFileOrFail(t, c.ParseErrsOutFilePath(index, outfolder), actualErrs)
+		if UpdateBaselines() {
+			t.Logf("Updating Ast baselines...")
+			writeFileOrFail(t, c.ParseErrsFilePath(index), actualErrs)
+		} else {
+			t.Fail()
+		}
+	}
+}
+
+func (c *TestCase) runRoundtrippedTest(t *testing.T, index int, outfolder string) {
+	var ms diag.Messages
+	cu := parser.ParseText(&ms, *c.Asts[index])
+
+	var w text.Writer
+	cu.Write(&w)
+	txt := w.String()
+	ms = diag.Messages{}
+	roundtrippedCu := parser.ParseText(&ms, txt)
+	if ms.HasErrors() {
+		t.Fatalf("Unexpected parse errors:\n%s\n%v\n", txt, ms)
+	}
+
+	w = text.Writer{}
+	roundtrippedCu.Write(&w)
+	writeFileOrFail(t, path.Join(outfolder, c.Name+".ns"), w.String())
+	if !reflect.DeepEqual(roundtrippedCu, cu) {
+		t.Logf("----")
+		t.Logf("Output:\n%s\n", txt)
+		t.Logf("----")
+		t.Logf("Original: \n%s\n", text.ToReflectString(cu))
+		t.Logf("----")
+		t.Logf("Rounttripped: \n%s\n", text.ToReflectString(roundtrippedCu))
+		t.Logf("----")
+		t.Fail()
+	}
 }
 
 func Load(folder string) ([]*TestCase, error) {
@@ -324,6 +355,7 @@ func Load(folder string) ([]*TestCase, error) {
 		if index != nil {
 			idx = *index
 		}
+
 		if tc.Inputs[idx], err = readFile(tc.InputFilePath(index)); err != nil {
 			return nil, err
 		}
@@ -337,14 +369,22 @@ func Load(folder string) ([]*TestCase, error) {
 		}
 	}
 
-	var sortedCases []*TestCase
+	sortedCases := sortCases(cases)
+	return verifyCases(sortedCases)
+}
+
+func sortCases(cases map[string]*TestCase) []*TestCase {
+	sortedCases := make([]*TestCase, 0, len(cases))
 	for _, v := range cases {
 		sortedCases = append(sortedCases, v)
 	}
 	sort.SliceStable(sortedCases, func(i, j int) bool {
 		return strings.Compare(sortedCases[i].Name, sortedCases[j].Name) < 0
 	})
+	return sortedCases
+}
 
+func verifyCases(sortedCases []*TestCase) ([]*TestCase, error) {
 	for _, s := range sortedCases {
 		if len(s.Inputs) == 0 {
 			return nil, fmt.Errorf("test case with no inputs: %s", s.Name)
@@ -356,4 +396,5 @@ func Load(folder string) ([]*TestCase, error) {
 	}
 
 	return sortedCases, nil
+
 }

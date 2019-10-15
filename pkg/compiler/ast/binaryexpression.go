@@ -29,5 +29,4 @@ func (e *BinaryExpression) Kind() ExpressionKind { return ExprBinary }
 
 func (e *BinaryExpression) Write(w *text.Writer) {
 	w.W(e.Left).W(" ").W(e.Op).W(" ").W(e.Right)
-
 }

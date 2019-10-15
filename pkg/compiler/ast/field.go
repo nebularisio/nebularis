@@ -29,9 +29,11 @@ type Field struct {
 
 func (f *Field) Write(w *text.Writer) {
 	w.W(f.Attributes).W(f.Name).W(" ").W(f.Type)
+
 	if len(f.Constraints) > 0 {
 		w.W(" ").W(f.Constraints)
 	}
+
 	w.Ln()
 }
 

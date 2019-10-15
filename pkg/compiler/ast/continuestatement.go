@@ -30,8 +30,10 @@ func (ContinueStatement) Kind() StatementKind { return StContinue }
 
 func (c *ContinueStatement) Write(w *text.Writer) {
 	w.W("continue")
+
 	if c.Label != nil {
 		w.W(" ").W(*c.Label)
 	}
+
 	w.W(";").Ln()
 }

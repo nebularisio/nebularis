@@ -27,27 +27,32 @@ type InterfaceType struct {
 
 var _ TypeSpec = &InterfaceType{}
 
-func (p *InterfaceType) Kind() TypeKind { return Interface }
+func (t *InterfaceType) Kind() TypeKind { return Interface }
 
-func (n *InterfaceType) Write(w *text.Writer) {
-	w.W("interface").W(n.TypeParameters).W(" ")
+func (t *InterfaceType) Write(w *text.Writer) {
+	w.W("interface").W(t.TypeParameters).W(" ")
 
-	if len(n.Extends) > 0 {
+	if len(t.Extends) > 0 {
 		w.W(": ")
-		for i, e := range n.Extends {
+
+		for i, e := range t.Extends {
 			if i > 0 {
 				w.W(", ")
 			}
+
 			w.W(e)
 		}
+
 		w.W(" ")
 	}
 
 	w.W("{")
-	if len(n.Methods) > 0 {
+
+	if len(t.Methods) > 0 {
 		w.Ln().Indent()
-		w.W(n.Methods)
+		w.W(t.Methods)
 		w.Dedent()
 	}
+
 	w.W("}")
 }

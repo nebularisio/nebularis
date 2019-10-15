@@ -18,6 +18,7 @@ func Analyze(o Options) Result {
 	c := newContext(o.Sources)
 
 	c.create()
+
 	if c.m.HasErrors() {
 		return Result{
 			Messages: c.m,
@@ -25,6 +26,7 @@ func Analyze(o Options) Result {
 	}
 
 	c.resolve()
+
 	if c.m.HasErrors() {
 		return Result{
 			Messages: c.m,
@@ -32,6 +34,7 @@ func Analyze(o Options) Result {
 	}
 
 	c.check()
+
 	if c.m.HasErrors() {
 		return Result{
 			Messages: c.m,
